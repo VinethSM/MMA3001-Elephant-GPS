@@ -1,0 +1,17 @@
+check,expected,actual,passed,status
+Required sheet names,"['GPS_Data', 'README', 'Sample_Summary', 'Data_Dictionary']","['GPS_Data', 'README', 'Sample_Summary', 'Data_Dictionary']",True,PASS
+GPS row count,60000,60000,True,PASS
+GPS column names,"['AnimalID', 'Species', 'Timestamp', 'Year', 'DayOfYear', 'Latitude', 'Longitude', 'HDOP', 'RecordsCombined']","['AnimalID', 'Species', 'Timestamp', 'Year', 'DayOfYear', 'Latitude', 'Longitude', 'HDOP', 'RecordsCombined']",True,PASS
+Unique AnimalID count,6,6,True,PASS
+Rows per animal,"10,000 each","[10000, 10000, 10000, 10000, 10000, 10000]",True,PASS
+Missing cells,0,0,True,PASS
+Timestamp parse failures,0,0,True,PASS
+Duplicate AnimalID + Timestamp rows,0,0,True,PASS
+Invalid latitude values,0,0,True,PASS
+Invalid longitude values,0,0,True,PASS
+Year/Timestamp mismatches,0,0,True,PASS
+DayOfYear/Timestamp mismatches,0,0,True,PASS
+Modal positive interval (minutes),15.0,15.0,True,PASS
+Median positive interval (minutes),15.0,15.0,True,PASS
+Gaps above 30 minutes,70,70,True,PASS
+Candidate spatial spikes,6,6,True,PASS

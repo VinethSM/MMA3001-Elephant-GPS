@@ -1,0 +1,54 @@
+{
+  "preprocessing_version": "week2_v1",
+  "rules": {
+    "spike_screen": "incoming adjacent speed > 5 m/s AND outgoing adjacent speed > 5 m/s",
+    "spike_removal": "remove only the six D1-approved AnimalID-timestamp events",
+    "segment_boundary": "new segment when within-animal gap > 30 minutes",
+    "movement_boundary_rule": "never calculate movement across a segment boundary",
+    "complete_day_rule": "at least 95 retained fixes, at least 23.5 hours coverage, one segment",
+    "local_coordinates": "equirectangular x/y metres relative to each animal's first retained fix",
+    "final_geographic_distance": "Haversine distance with Earth radius 6,371,000 m"
+  },
+  "source_audit": {
+    "source_rows": 60000,
+    "standardised_rows": 60000,
+    "animal_count": 6,
+    "required_missing_values": 0,
+    "invalid_latitudes": 0,
+    "invalid_longitudes": 0,
+    "source_year_mismatches": 0,
+    "source_day_of_year_mismatches": 0,
+    "duplicate_rows": 0,
+    "duplicate_events_consolidated": 0,
+    "raw_gaps_above_30_minutes": 70,
+    "modal_interval_minutes": 15.0,
+    "median_interval_minutes": 15.0
+  },
+  "final_validation": {
+    "cleaned_rows": 59994,
+    "removed_spikes": 6,
+    "animal_count": 6,
+    "clean_long_gaps_above_30_minutes": 71,
+    "segment_count": 77,
+    "duplicate_animal_timestamp_events": 0,
+    "missing_required_values": 0,
+    "movement_values_across_segment_boundaries": 0,
+    "maximum_speed_mps_after_cleaning": 2.565836883349757,
+    "status": "PASS"
+  },
+  "complete_days": 433,
+  "projection_comparison": {
+    "median_absolute_difference_m": 0.004309030911684886,
+    "p95_absolute_difference_m": 0.11926485971155495,
+    "maximum_absolute_difference_m": 2.9016429540229183,
+    "median_percentage_difference": 0.007734885318237289,
+    "p95_percentage_difference": 0.10551678427775381,
+    "maximum_percentage_difference": 0.21846086940181955
+  },
+  "privacy": {
+    "raw_workbook_public": false,
+    "cleaned_coordinate_table_public": false,
+    "removed_coordinate_records_public": false,
+    "public_figures_use_absolute_coordinates": false
+  }
+}

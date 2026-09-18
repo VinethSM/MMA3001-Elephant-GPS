@@ -1,0 +1,115 @@
+## D1 — Approve the six spatial removals
+
+**Date:** 18/09/26
+
+### Evidence inspected
+
+I inspected `reports/week2_spike_candidates.csv` and
+`private_figures/week2_candidate_spike_inspection.png`.
+
+### My choice
+
+I approved the removal of the six documented AnimalID–Timestamp events and no other records.
+
+### My reason
+
+Each approved event exceeded 5 m/s on both adjacent movements. The local trajectory also showed a sudden multi-kilometre displacement that did not match the surrounding GPS positions. I therefore treated these six records as spatial GPS errors.
+
+### Rejected option
+
+I rejected automatically deleting every observation above a general speed threshold. A genuine movement could otherwise be removed without inspecting the surrounding trajectory.
+
+### Assumption or limitation
+
+The screen identifies an implausible movement pattern, but it does not prove the exact physical reason for the GPS error.
+
+### AI contribution
+
+AI helped produce the adjacent-speed screening code and inspection figure. I checked the six records and made the final removal decision after inspecting the output.
+
+### Interview explanation
+
+I used 5 m/s as a transparent screening threshold, not an automatic deletion rule. I removed only six fixed, documented events after checking their adjacent speeds and surrounding movement paths.
+
+
+
+
+
+
+
+## D2 — Confirm the trajectory segmentation rule
+
+**Date:** 18/09/26
+
+### Evidence inspected
+
+I inspected the cleaned time-gap counts, the segment-start table and the time-gap distribution.
+
+### My choice
+
+I started a new trajectory segment only when the within-animal recording gap was greater than 30 minutes. A gap of exactly 30 minutes remained within the same segment.
+
+### My reason
+
+The normal recording interval is approximately 15 minutes. A gap above 30 minutes means that more than one expected recording opportunity may be absent. The animal’s movement during that period is not adequately supported by the available observations.
+
+### Observed consequence
+
+The original audit identified 70 gaps above 30 minutes. Removing the two consecutive GPS errors at 11:00 and 11:15 created one new 45-minute gap. The cleaned data therefore contained 71 long-gap boundaries and 77 segments across six elephants.
+
+### Rejected option
+
+I rejected connecting every observation into one uninterrupted path because this would calculate distance and speed across periods where the animal’s movement was unknown.
+
+### AI contribution
+
+AI helped implement the segmentation calculation. I confirmed the threshold and checked the segment and gap counts before accepting it.
+
+### Interview explanation
+
+The original schedule was approximately 15 minutes. I started a new segment after gaps above 30 minutes and left movement variables blank at segment starts so the program never calculated movement across unsupported periods.
+
+
+
+
+
+
+## D3 — Choose the interpolation coordinate system
+
+**Date:** 18/09/26
+
+
+### Evidence inspected
+
+I inspected `reports/week2_projection_comparison.csv` and compared local Euclidean step distances against Haversine step distances.
+
+### My choice
+
+I will use local x/y coordinates in metres for interpolation. I will use Haversine distance for final geographic positional-error calculations.
+
+### My reason
+
+The local x/y system gives both interpolation coordinates the same physical unit of metres. The comparison showed that its step distances were extremely close to the Haversine distances over the project’s study area.
+
+### Actual comparison
+
+- Median absolute difference: [INSERT YOUR RESULT] m
+- 95th-percentile absolute difference: [INSERT YOUR RESULT] m
+- Maximum absolute difference: [INSERT YOUR RESULT] m
+- Maximum percentage difference: [INSERT YOUR RESULT]%
+
+### Rejected option
+
+I rejected treating raw latitude and longitude degrees as equal physical distance coordinates because a degree of longitude and a degree of latitude do not represent the same number of metres.
+
+### Limitation
+
+The local equirectangular coordinates are an approximation tied to this geographical area. Final geographical errors will therefore still be checked using Haversine distance.
+
+### AI contribution
+
+AI helped implement the local coordinate conversion and comparison. I inspected the calculated differences and chose the coordinate system based on the output.
+
+### Interview explanation
+
+I interpolated in local x/y coordinates because both axes are measured in metres. I retained Haversine distance for final geographic errors so the reported validation results account for the Earth’s curvature.

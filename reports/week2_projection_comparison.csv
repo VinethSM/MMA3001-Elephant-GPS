@@ -1,0 +1,7 @@
+Metric,Value
+median_absolute_difference_m,0.004309030911684886
+p95_absolute_difference_m,0.11926485971155495
+maximum_absolute_difference_m,2.9016429540229183
+median_percentage_difference,0.007734885318237289
+p95_percentage_difference,0.10551678427775381
+maximum_percentage_difference,0.21846086940181955

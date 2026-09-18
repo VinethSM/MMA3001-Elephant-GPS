@@ -1,0 +1,5 @@
+sheet_name,rows_read_by_pandas,columns_read_by_pandas
+GPS_Data,60000,9
+README,22,8
+Sample_Summary,18,16
+Data_Dictionary,12,4

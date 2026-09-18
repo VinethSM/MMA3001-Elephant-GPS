@@ -1,0 +1,20 @@
+WEEK 1 ELEPHANT GPS DATA AUDIT
+
+Workbook: Elephant_GPS_Reduced_60000.xlsx
+File size: 2.370 MB
+Sheets: GPS_Data, README, Sample_Summary, Data_Dictionary
+GPS rows: 60,000
+GPS fields: AnimalID, Species, Timestamp, Year, DayOfYear, Latitude, Longitude, HDOP, RecordsCombined
+Animal IDs: 6
+Timestamp range: 2018-08-17 01:16:00 to 2019-12-06 01:00:00
+Latitude range: -19.12931 to -18.74630
+Longitude range: 34.18622 to 34.60529
+Missing cells: 0
+Duplicate AnimalID + Timestamp rows: 0
+Modal positive interval: 15.0 minutes
+Median positive interval: 15.0 minutes
+Maximum source gap: 91.0 minutes
+Source gaps above 30 minutes: 70
+Candidate spatial spikes for inspection: 6
+
+Candidate spikes were flagged for inspection only. No raw row was deleted.

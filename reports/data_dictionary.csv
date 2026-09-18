@@ -1,0 +1,10 @@
+field,type,unit_or_format,meaning,project_use
+AnimalID,text,none,Unique collared-elephant identifier,Group trajectories
+Species,text,none,Species label; elephant in this subset,Validation/metadata only
+Timestamp,datetime,"local time, UTC+02:00",Time of GPS fix,Order and downsample trajectories
+Year,integer,year,Calendar year,Cross-check Timestamp
+DayOfYear,integer,1-366,Day number within year,Cross-check Timestamp
+Latitude,number,WGS84 decimal degrees,North/south coordinate,Trajectory reconstruction
+Longitude,number,WGS84 decimal degrees,East/west coordinate,Trajectory reconstruction
+HDOP,number,dimensionless,Horizontal dilution of precision,Audit only; constant zero here
+RecordsCombined,integer,count >= 1,Source rows consolidated into this fix,Cleaning traceability
