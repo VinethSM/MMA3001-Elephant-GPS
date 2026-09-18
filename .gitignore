@@ -1,0 +1,26 @@
+# Python environment and cache
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Windows metadata
+desktop.ini
+
+# Exact or derived wildlife-coordinate data
+data/raw/*
+!data/raw/README.md
+data/processed/*
+!data/processed/README.md
+figures/private/*
+!figures/private/README.md
+
+# Generated documentation caches
+docs/_build/
+
+*.pyc
+.ipynb_checkpoints/
+
+private_figures/*
+!private_figures/README.md

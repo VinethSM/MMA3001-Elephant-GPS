@@ -1,0 +1,12 @@
+pandas
+numpy
+openpyxl
+matplotlib
+seaborn
+jupyter
+ipykernel
+scipy
+pytest
+pytest-html
+pdoc
+openpyxl
