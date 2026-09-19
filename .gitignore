@@ -24,3 +24,9 @@ docs/_build/
 
 private_figures/*
 !private_figures/README.md
+
+# Private Week 4 reconstructed trajectory records
+data/processed/week4_predictions/
+
+# Private relative trajectory failure-case figures
+private_figures/

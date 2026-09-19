@@ -12,3 +12,4 @@ pdoc
 openpyxl
 scipy
 PyYAML
+pyarrow

@@ -78,3 +78,7 @@ pilot:
 
     '
 contract_status: frozen_after_D6
+final_decision:
+  method: pchip
+  interval_minutes: 30
+  decision_record: reports/week4_final_decision.yaml
