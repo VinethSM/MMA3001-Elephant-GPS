@@ -1,0 +1,80 @@
+project:
+  title: Elephant GPS sampling-accuracy optimisation
+  engineering_use: 'Identify the longest tested GPS sampling interval that preserves
+    acceptable movement-path reconstruction accuracy.
+
+    '
+  resource_claim: 'GPS fix reduction is used only as a proxy for reduced sensor activity,
+    storage and transmission demand.
+
+    '
+  unsupported_claim: 'The project will not predict exact battery-life improvement
+    because electrical power-consumption measurements are unavailable.
+
+    '
+input:
+  cleaned_file: data/processed/elephant_gps_cleaned_reference.csv
+  expected_rows: 59994
+  expected_animals: 6
+  expected_segments: 77
+  coordinate_system_for_interpolation: local x and y coordinates in metres
+  final_position_error_calculation: Haversine distance in metres
+  numeric_precision: float64
+sampling:
+  reference_interval_minutes: 15
+  simulated_intervals_minutes:
+  - 30
+  - 60
+  - 120
+  - 240
+  offsets: every possible offset from 0 to k minus 1
+  segment_gap_rule: start a new segment after a gap greater than 30 minutes
+  interpolate_across_segments: false
+  extrapolation_allowed: false
+methods:
+  baseline: linear
+  pilot_candidates:
+  - cubic
+  - pchip
+  full_study_methods:
+  - linear
+  - cubic
+  - pchip
+  cubic_boundary_condition: natural
+  minimum_retained_anchors:
+    linear: 2
+    cubic: 4
+    pchip: 2
+validation:
+  population: common_eligible
+  withheld_reference: genuine cleaned 15-minute fixes
+  compare_same_points_between_methods: true
+metrics:
+  mandatory_criteria:
+    median_position_error_m_maximum: 100.0
+    absolute_path_length_error_percent_maximum: 10.0
+    conflict_rule: fail_if_either_mandatory_metric_fails
+  diagnostics:
+  - MAE in metres
+  - RMSE in metres
+  - 95th-percentile position error in metres
+  - maximum position error in metres
+  - signed path-length error in percent
+  - method coverage and failure rate
+  - interpolation runtime
+  - coordinate overshoot count
+pilot:
+  animal_selection: alphabetically first AnimalID
+  segment_selection: two longest segments for the selected animal
+  intervals_minutes:
+  - 60
+  - 120
+  methods:
+  - linear
+  - cubic
+  - pchip
+  purpose: 'Debug and compare candidate methods only. Pilot results are not the final
+    engineering results.
+
+    '
+contract_status: frozen_after_D6

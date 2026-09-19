@@ -113,3 +113,53 @@ AI helped implement the local coordinate conversion and comparison. I inspected 
 ### Interview explanation
 
 I interpolated in local x/y coordinates because both axes are measured in metres. I retained Haversine distance for final geographic errors so the reported validation results account for the Earth’s curvature.
+
+## D4 — Interpolation methods retained after pilot
+
+**Decision:** Retain linear interpolation, natural cubic-spline interpolation,
+and PCHIP for the full reconstruction experiment.
+
+**Reasoning:** Linear interpolation is retained as the simple baseline. PCHIP
+produced the lowest median position error and RMSE at both pilot intervals and
+had no detected overshoot. Cubic spline produced the lowest 95th-percentile
+error and median absolute path-length error, but approximately 34–37% of its
+pilot reconstructions contained coordinate overshoot. Linear interpolation was
+the fastest method and had no overshoot, but generally produced larger position
+and path-length errors.
+
+All three methods completed the pilot without failed cases, and their absolute
+runtime was small. Therefore, the pilot provides sufficient justification to
+retain all three for full validation. PCHIP is treated as the primary
+shape-preserving alternative, cubic spline as a smooth secondary alternative,
+and linear interpolation as the baseline.
+
+**Important limitation:** This pilot used only selected segments and the
+60-minute and 120-minute intervals. It is not being used to select the final
+sampling interval or declare a final winning method. Those decisions will be
+made after validation across all eligible elephants, segments, intervals and
+starting offsets.
+
+
+## D5 — Validation population
+
+Date:
+
+Evidence inspected:
+- reports/week3_support_audit.csv
+- reports/week3_support_summary.csv
+
+Decision:
+I selected [common eligible / method-specific] validation cases.
+
+Reason:
+[Explain whether every method should be compared on identical withheld fixes.]
+
+Handling of unsupported cases:
+Cases with insufficient retained anchors will receive an explicit failure
+status. Positions outside the first and last retained anchors will not be
+extrapolated.
+
+Limitation:
+Using a common set can exclude fixes that the simpler method could otherwise
+reconstruct. Method-specific coverage will therefore also be reported.
+

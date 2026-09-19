@@ -10,3 +10,5 @@ pytest
 pytest-html
 pdoc
 openpyxl
+scipy
+PyYAML
