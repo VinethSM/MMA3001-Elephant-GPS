@@ -163,3 +163,65 @@ Limitation:
 Using a common set can exclude fixes that the simpler method could otherwise
 reconstruct. Method-specific coverage will therefore also be reported.
 
+## D6 — Evaluation metrics and acceptance tolerances
+
+**Decision:** Use median position error and median absolute path-length error as
+the two mandatory acceptance criteria.
+
+A method and sampling-interval combination will be classified as acceptable
+only when:
+
+- median position error is no greater than 100 metres; and
+- median absolute path-length error is no greater than 10%.
+
+Both criteria must pass. A result that passes only one criterion will be
+classified as unacceptable.
+
+Median position error represents typical reconstruction accuracy and is less
+affected by isolated extreme errors than the mean. Absolute path-length error
+is also mandatory because a reconstructed trajectory may have reasonable
+pointwise accuracy while cutting across turns and underestimating the distance
+travelled.
+
+MAE, RMSE, 95th-percentile position error, signed path-length error,
+coverage/failure rate, overshoot and runtime will be reported as diagnostic
+metrics. They will be used to explain method behaviour and distinguish between
+methods that pass the mandatory criteria, but they will not independently
+determine acceptance.
+
+The 100-metre and 10% limits are preliminary engineering design tolerances,
+not established biological requirements. A later sensitivity analysis will
+test position limits of 50, 100 and 150 metres and path-length limits of 5%,
+10% and 15%.
+
+
+
+
+## D7 — Final method and sampling interval
+
+**Decision:** Select [METHOD] interpolation with a [INTERVAL]-minute nominal
+GPS sampling interval.
+
+**Evidence inspected:** The full common-eligible validation included all six
+elephants, all supported continuous trajectory segments, every valid starting
+offset and the 30-, 60-, 120- and 240-minute schedules.
+
+The selected combination produced:
+
+- median position error: [VALUE] metres;
+- 95th-percentile position error: [VALUE] metres;
+- median absolute path-length error: [VALUE]%;
+- median GPS-fix reduction: [VALUE]%;
+- animals passing both criteria: [VALUE] out of six; and
+- coordinate overshoot: [VALUE]%.
+
+**Reasoning:** [Write your personal reasoning here. Compare the selected
+method with the rejected methods and explain the position/path/overshoot
+trade-off.]
+
+**What would change my decision:** [State what additional evidence would make
+you choose another method, a shorter interval or an animal-specific policy.]
+
+**Limitations:** The result measures reconstruction of withheld 15-minute GPS
+fixes. It does not validate the unknown continuous path, exact battery-life
+improvement, future elephant movement or every elephant population.

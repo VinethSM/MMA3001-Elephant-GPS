@@ -1,0 +1,44 @@
+{
+  "run_timestamp_utc": "2026-09-19T03:31:07.574344+00:00",
+  "python_version": "3.14.7 (tags/v3.14.7:823f032, Aug  5 2026, 10:51:32) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "package_versions": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "scipy": "1.18.1"
+  },
+  "input_reference": "C:\\Users\\kookie\\OneDrive\\MMA3001_project\\data\\processed\\elephant_gps_cleaned_reference.csv",
+  "input_reference_sha256": "cecf3c2e3b1f426e664d234bcf693393cfeed3020ba094c8299ecff77dd66a2a",
+  "experiment_contract": "C:\\Users\\kookie\\OneDrive\\MMA3001_project\\reports\\experiment_contract.yaml",
+  "experiment_contract_sha256": "a37f3e77708d1867faf39f6a27c14b1f746f4588ebe38a4d533bc414dfdb7127",
+  "methods": [
+    "linear",
+    "cubic",
+    "pchip"
+  ],
+  "intervals_minutes": [
+    30,
+    60,
+    120,
+    240
+  ],
+  "validation_population": "common_eligible",
+  "position_tolerance_m": 100.0,
+  "path_tolerance_percent": 10.0,
+  "common_case_count": 2138,
+  "method_case_runs": 6414,
+  "prediction_partitions": [
+    "C:\\Users\\kookie\\OneDrive\\MMA3001_project\\data\\processed\\week4_predictions\\linear_30min.parquet",
+    "C:\\Users\\kookie\\OneDrive\\MMA3001_project\\data\\processed\\week4_predictions\\cubic_30min.parquet",
+    "C:\\Users\\kookie\\OneDrive\\MMA3001_project\\data\\processed\\week4_predictions\\pchip_30min.parquet",
+    "C:\\Users\\kookie\\OneDrive\\MMA3001_project\\data\\processed\\week4_predictions\\linear_60min.parquet",
+    "C:\\Users\\kookie\\OneDrive\\MMA3001_project\\data\\processed\\week4_predictions\\cubic_60min.parquet",
+    "C:\\Users\\kookie\\OneDrive\\MMA3001_project\\data\\processed\\week4_predictions\\pchip_60min.parquet",
+    "C:\\Users\\kookie\\OneDrive\\MMA3001_project\\data\\processed\\week4_predictions\\linear_120min.parquet",
+    "C:\\Users\\kookie\\OneDrive\\MMA3001_project\\data\\processed\\week4_predictions\\cubic_120min.parquet",
+    "C:\\Users\\kookie\\OneDrive\\MMA3001_project\\data\\processed\\week4_predictions\\pchip_120min.parquet",
+    "C:\\Users\\kookie\\OneDrive\\MMA3001_project\\data\\processed\\week4_predictions\\linear_240min.parquet",
+    "C:\\Users\\kookie\\OneDrive\\MMA3001_project\\data\\processed\\week4_predictions\\cubic_240min.parquet",
+    "C:\\Users\\kookie\\OneDrive\\MMA3001_project\\data\\processed\\week4_predictions\\pchip_240min.parquet"
+  ]
+}

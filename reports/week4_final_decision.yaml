@@ -1,0 +1,19 @@
+decision: D7
+recorded_utc: '2026-09-19T04:45:38.630113+00:00'
+selected_method: pchip
+selected_interval_minutes: 30
+median_position_error_m: 39.63195672436317
+p95_position_error_m: 158.13532439004535
+median_absolute_path_error_percent: 7.90659151604585
+median_fix_reduction_percent: 49.894067321115166
+overshoot_percent: 0.0
+animals_passing_both: 6
+animals_evaluated: 6
+all_animals_pass: true
+reason: I chose 30 minute intervals as it passed all the tests needed unlike the 60,120
+  and 240 minute intervals which failed the mandatory criteria. The pchip method was
+  chosen as it had the lowest median position error and median absolute path error
+  compared to the other methods.
+evidence_that_would_change_decision: Id make it a smaller interval than 30 if it shwoed
+  that 30 missed important movements but it didnt seem to miss any important movements
+  and the 30 minute interval was the only one that passed all the mandatory criteria.

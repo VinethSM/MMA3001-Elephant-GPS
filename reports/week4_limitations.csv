@@ -1,0 +1,6 @@
+Supported conclusion,Unsupported conclusion,Reason
+Accuracy of reconstructing omitted 15-minute GPS fixes.,The reconstructed path is the exact continuous path travelled.,The 15-minute reference itself does not observe movement between fixes.
+Percentage reduction in retained GPS fixes.,Exact percentage improvement in battery life.,No collar power-consumption or transmission-energy measurements are available.
+Performance on these six elephants.,Performance for every elephant population or collar deployment.,Only six female elephants from one study subset are represented.
+Interpolation inside continuous trajectory segments.,Safe reconstruction across long collar recording gaps.,Trajectories were deliberately separated at gaps above 30 minutes.
+Relative computational runtime in this development run.,A final optimised performance claim.,Repeated timing and profiling are completed in Week 5.
