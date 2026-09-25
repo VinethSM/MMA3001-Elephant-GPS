@@ -30,3 +30,17 @@ data/processed/week4_predictions/
 
 # Private relative trajectory failure-case figures
 private_figures/
+
+# Binary profiler output
+reports/*.prof
+
+# Python and test caches
+.pytest_cache/
+__pycache__/
+*.pyc
+
+# Large private pointwise predictions
+data/processed/week4_predictions/
+
+*.prof
+
