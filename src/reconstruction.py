@@ -152,6 +152,9 @@ def make_downsampling_mask(
     A withheld fix is eligible only when it lies strictly between
     retained anchors. Points outside that range would require
     extrapolation and are therefore excluded.
+
+    The segment is sorted only when necessary, and the output DataFrame
+    is constructed in one operation to reduce repeated pandas work.
     """
 
     if segment.empty:
@@ -162,15 +165,21 @@ def make_downsampling_mask(
             "Pass exactly one SegmentID."
         )
 
-    segment = (
-        segment.sort_values(
+    if not segment[
+        "Timestamp"
+    ].is_monotonic_increasing:
+        segment = segment.sort_values(
             "Timestamp",
             kind="mergesort",
         )
-        .reset_index(drop=True)
+
+    segment = segment.reset_index(
+        drop=True
     )
 
-    stride = interval_to_stride(interval_minutes)
+    stride = interval_to_stride(
+        interval_minutes
+    )
 
     if offset not in range(stride):
         raise ValueError(
@@ -179,11 +188,16 @@ def make_downsampling_mask(
 
     positions = np.arange(
         len(segment),
-        dtype=int,
+        dtype=np.int64,
     )
 
-    retained = positions % stride == offset
-    retained_positions = positions[retained]
+    retained = (
+        positions % stride == offset
+    )
+
+    retained_positions = positions[
+        retained
+    ]
 
     if len(retained_positions) == 0:
         eligible = np.zeros(
@@ -198,8 +212,13 @@ def make_downsampling_mask(
         )
 
     else:
-        first_anchor = int(retained_positions[0])
-        last_anchor = int(retained_positions[-1])
+        first_anchor = int(
+            retained_positions[0]
+        )
+
+        last_anchor = int(
+            retained_positions[-1]
+        )
 
         eligible = (
             (~retained)
@@ -223,23 +242,40 @@ def make_downsampling_mask(
             default="not_eligible",
         )
 
-    result = segment[
-        [
-            "SourceRowNumber",
-            "AnimalID",
-            "SegmentID",
-            "Timestamp",
-        ]
-    ].copy()
-
-    result["Interval_min"] = interval_minutes
-    result["Offset"] = offset
-    result["PositionInSegment"] = positions
-    result["Retained"] = retained
-    result["EligibleWithheld"] = eligible
-    result["MaskReason"] = reasons
+    result = pd.DataFrame(
+        {
+            "SourceRowNumber": segment[
+                "SourceRowNumber"
+            ].array,
+            "AnimalID": segment[
+                "AnimalID"
+            ].array,
+            "SegmentID": segment[
+                "SegmentID"
+            ].array,
+            "Timestamp": segment[
+                "Timestamp"
+            ].array,
+            "Interval_min": np.full(
+                len(segment),
+                interval_minutes,
+                dtype=np.int64,
+            ),
+            "Offset": np.full(
+                len(segment),
+                offset,
+                dtype=np.int64,
+            ),
+            "PositionInSegment": positions,
+            "Retained": retained,
+            "EligibleWithheld": eligible,
+            "MaskReason": reasons,
+        }
+    )
 
     return result
+
+
 
 
 def interpolate_xy(
@@ -443,16 +479,23 @@ def _origin_for_animal(
 ) -> tuple[float, float]:
     """Return the Week 2 local-coordinate origin."""
 
-    animal = (
-        reference.loc[
-            reference["AnimalID"].eq(animal_id)
-        ]
-        .sort_values("Timestamp")
-    )
+    animal = reference.loc[
+        reference["AnimalID"].eq(
+            animal_id
+        )
+    ]
 
     if animal.empty:
         raise ValueError(
             f"Animal not found: {animal_id}"
+        )
+
+    if not animal[
+        "Timestamp"
+    ].is_monotonic_increasing:
+        animal = animal.sort_values(
+            "Timestamp",
+            kind="mergesort",
         )
 
     first = animal.iloc[0]
@@ -500,12 +543,16 @@ def reconstruct_case(
             f"Segment not found: {segment_id}"
         )
 
-    segment = (
-        segment.sort_values(
+    if not segment[
+        "Timestamp"
+    ].is_monotonic_increasing:
+        segment = segment.sort_values(
             "Timestamp",
             kind="mergesort",
         )
-        .reset_index(drop=True)
+
+    segment = segment.reset_index(
+        drop=True
     )
 
     mask = make_downsampling_mask(
@@ -655,35 +702,60 @@ def reconstruct_case(
         )
     )
 
-    predictions = withheld[
-        [
-            "SourceRowNumber",
-            "AnimalID",
-            "SegmentID",
-            "Timestamp",
-            "Latitude",
-            "Longitude",
-            "LocalX_m",
-            "LocalY_m",
-        ]
-    ].copy()
+    prediction_columns = [
+        "SourceRowNumber",
+        "AnimalID",
+        "SegmentID",
+        "Timestamp",
+        "Latitude",
+        "Longitude",
+        "LocalX_m",
+        "LocalY_m",
+    ]
 
-    predictions["Method"] = method
-    predictions["Interval_min"] = interval_minutes
-    predictions["Offset"] = offset
-    predictions["EstimatedX_m"] = estimated_x
-    predictions["EstimatedY_m"] = estimated_y
-    predictions["EstimatedLatitude"] = (
-        estimated_latitude
+    prediction_details = pd.DataFrame(
+        {
+            "Method": np.full(
+                len(withheld),
+                method,
+                dtype=object,
+            ),
+            "Interval_min": np.full(
+                len(withheld),
+                interval_minutes,
+                dtype=np.int64,
+            ),
+            "Offset": np.full(
+                len(withheld),
+                offset,
+                dtype=np.int64,
+            ),
+            "EstimatedX_m": estimated_x,
+            "EstimatedY_m": estimated_y,
+            "EstimatedLatitude": (
+                estimated_latitude
+            ),
+            "EstimatedLongitude": (
+                estimated_longitude
+            ),
+            "PositionError_m": (
+                position_error
+            ),
+            "CoordinateOvershoot": (
+                overshoot
+            ),
+        },
+        index=withheld.index,
     )
-    predictions["EstimatedLongitude"] = (
-        estimated_longitude
-    )
-    predictions["PositionError_m"] = (
-        position_error
-    )
-    predictions["CoordinateOvershoot"] = (
-        overshoot
+
+    predictions = pd.concat(
+        [
+            withheld[
+                prediction_columns
+            ].copy(),
+            prediction_details,
+        ],
+        axis=1,
     )
 
     first_anchor_time = anchors[

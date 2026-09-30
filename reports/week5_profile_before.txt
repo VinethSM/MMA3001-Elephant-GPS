@@ -1,0 +1,114 @@
+WEEK 5 VALIDATION PROFILE
+======================================================================
+
+{
+  "total_function_calls": 280635697,
+  "primitive_function_calls": 276695302,
+  "total_profiled_seconds": 233.71620240000004
+}
+
+TOP 50 FUNCTIONS BY CUMULATIVE TIME
+======================================================================
+Sat Sep 19 21:11:24 2026    C:\Users\kookie\OneDrive\MMA3001_project\reports\week5_validation_before.prof
+
+         280635697 function calls (276695302 primitive calls) in 233.716 seconds
+
+   Ordered by: cumulative time
+   List reduced from 5583 to 50 due to restriction <50>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+    854/1    0.014    0.000  233.719  233.719 {built-in method builtins.exec}
+        1    0.000    0.000  233.719  233.719 <frozen runpy>:206(run_module)
+        1    0.000    0.000  233.716  233.716 <frozen runpy>:65(_run_code)
+        1    0.003    0.003  233.716  233.716 C:\Users\kookie\OneDrive\MMA3001_project\src\validation.py:1(<module>)
+        1    0.063    0.063  226.828  226.828 C:\Users\kookie\OneDrive\MMA3001_project\src\validation.py:702(main)
+        1    0.942    0.942  226.214  226.214 C:\Users\kookie\OneDrive\MMA3001_project\src\validation.py:329(run_experiment)
+     6414    1.628    0.000  193.844    0.030 C:\Users\kookie\OneDrive\MMA3001_project\src\reconstruction.py:485(reconstruct_case)
+   135782    0.681    0.000   71.787    0.001 C:\Users\kookie\OneDrive\MMA3001_project\.venv\Lib\site-packages\pandas\core\frame.py:4559(__setitem__)
+   135782    0.269    0.000   62.111    0.000 C:\Users\kookie\OneDrive\MMA3001_project\.venv\Lib\site-packages\pandas\core\frame.py:4864(_set_item)
+   135782    0.837    0.000   51.262    0.000 C:\Users\kookie\OneDrive\MMA3001_project\.venv\Lib\site-packages\pandas\core\frame.py:4848(_set_item_mgr)
+   135894    1.035    0.000   48.224    0.000 C:\Users\kookie\OneDrive\MMA3001_project\.venv\Lib\site-packages\pandas\core\internals\managers.py:1544(insert)
+     8724    0.443    0.000   46.907    0.005 C:\Users\kookie\OneDrive\MMA3001_project\src\reconstruction.py:145(make_downsampling_mask)
+   262491    1.124    0.000   37.018    0.000 C:\Users\kookie\OneDrive\MMA3001_project\.venv\Lib\site-packages\pandas\core\frame.py:4337(__getitem__)
+90724/84310    0.279    0.000   36.968    0.000 C:\Users\kookie\OneDrive\MMA3001_project\.venv\Lib\site-packages\pandas\core\indexing.py:1192(__getitem__)
+    53799    0.446    0.000   34.255    0.001 C:\Users\kookie\OneDrive\MMA3001_project\.venv\Lib\site-packages\pandas\core\generic.py:3998(take)
+    53536    0.190    0.000   32.944    0.001 C:\Users\kookie\OneDrive\MMA3001_project\.venv\Lib\site-packages\pandas\core\internals\managers.py:1065(take)
+    44904    0.157    0.000   32.319    0.001 C:\Users\kookie\OneDrive\MMA3001_project\.venv\Lib\site-packages\pandas\core\indexing.py:1415(_getitem_axis)
+    38490    0.094    0.000   31.225    0.001 C:\Users\kookie\OneDrive\MMA3001_project\.venv\Lib\site-packages\pandas\core\indexing.py:1221(_getbool_axis)
+    53559    1.071    0.000   29.249    0.001 C:\Users\kookie\OneDrive\MMA3001_project\.venv\Lib\site-packages\pandas\core\internals\managers.py:813(reindex_indexer)
+   182337    0.221    0.000   24.720    0.000 C:\Users\kookie\OneDrive\MMA3001_project\.venv\Lib\site-packages\pandas\_config\config.py:143(get_option)
+   182339    0.353    0.000   24.159    0.000 C:\Users\kookie\OneDrive\MMA3001_project\.venv\Lib\site-packages\pandas\_config\config.py:127(_get_single_key)
+   473243    1.015    0.000   23.984    0.000 C:\Users\kookie\OneDrive\MMA3001_project\.venv\Lib\site-packages\pandas\core\internals\blocks.py:995(take_nd)
+     6414    0.131    0.000   23.488    0.004 C:\Users\kookie\OneDrive\MMA3001_project\src\reconstruction.py:440(_origin_for_animal)
+   182339    2.691    0.000   23.314    0.000 C:\Users\kookie\OneDrive\MMA3001_project\.venv\Lib\site-packages\pandas\_config\config.py:650(_select_options)
+561679/529809    1.214    0.000   22.718    0.000 C:\Users\kookie\OneDrive\MMA3001_project\.venv\Lib\site-packages\pandas\core\array_algos\take.py:57(take_nd)
+  9920419    4.503    0.000   19.805    0.000 C:\Users\kookie\AppData\Local\Python\pythoncore-3.14-64\Lib\re\__init__.py:174(search)
+    90980    0.171    0.000   17.282    0.000 C:\Users\kookie\OneDrive\MMA3001_project\.venv\Lib\site-packages\pandas\core\generic.py:6548(copy)
+   135894    0.546    0.000   16.892    0.000 C:\Users\kookie\OneDrive\MMA3001_project\.venv\Lib\site-packages\pandas\core\indexes\base.py:7143(insert)
+   103848    0.395    0.000   16.544    0.000 C:\Users\kookie\OneDrive\MMA3001_project\.venv\Lib\site-packages\pandas\core\internals\managers.py:739(copy)
+103080/64418    0.163    0.000   16.514    0.000 C:\Users\kookie\OneDrive\MMA3001_project\.venv\Lib\site-packages\pandas\core\ops\common.py:67(new_method)
+   254176    0.283    0.000   16.050    0.000 C:\Users\kookie\OneDrive\MMA3001_project\.venv\Lib\site-packages\pandas\core\frame.py:4292(_ixs)
+   157597    1.224    0.000   15.534    0.000 C:\Users\kookie\OneDrive\MMA3001_project\.venv\Lib\site-packages\pandas\core\indexes\base.py:849(_engine)
+   135894    0.376    0.000   15.269    0.000 C:\Users\kookie\OneDrive\MMA3001_project\.venv\Lib\site-packages\pandas\core\arrays\string_arrow.py:258(insert)
+   247317    0.276    0.000   14.959    0.000 C:\Users\kookie\OneDrive\MMA3001_project\.venv\Lib\site-packages\pandas\core\frame.py:4968(_get_item)
+   135894    0.743    0.000   14.843    0.000 C:\Users\kookie\OneDrive\MMA3001_project\.venv\Lib\site-packages\pandas\core\arrays\base.py:2517(insert)
+   809626    5.013    0.000   14.588    0.000 C:\Users\kookie\OneDrive\MMA3001_project\.venv\Lib\site-packages\pandas\core\arrays\arrow\array.py:778(__getitem__)
+   187969    0.798    0.000   14.284    0.000 C:\Users\kookie\OneDrive\MMA3001_project\.venv\Lib\site-packages\pandas\core\indexes\base.py:5127(_get_engine_target)
+        1    0.063    0.063   13.286   13.286 C:\Users\kookie\OneDrive\MMA3001_project\src\reconstruction.py:1026(build_support_audit)
+61421065/61040367   10.219    0.000   13.067    0.000 {built-in method builtins.isinstance}
+   116689    1.714    0.000   12.552    0.000 C:\Users\kookie\OneDrive\MMA3001_project\.venv\Lib\site-packages\pandas\core\internals\managers.py:399(apply)
+   120662    1.401    0.000   12.473    0.000 C:\Users\kookie\OneDrive\MMA3001_project\.venv\Lib\site-packages\pandas\core\indexes\base.py:2457(is_unique)
+  9921824    6.575    0.000   11.822    0.000 C:\Users\kookie\AppData\Local\Python\pythoncore-3.14-64\Lib\re\__init__.py:330(_compile)
+   164580    1.186    0.000   11.611    0.000 C:\Users\kookie\OneDrive\MMA3001_project\.venv\Lib\site-packages\pandas\core\arrays\arrow\array.py:1625(take)
+    25846    0.080    0.000   11.514    0.000 C:\Users\kookie\OneDrive\MMA3001_project\.venv\Lib\site-packages\pandas\core\series.py:6726(_cmp_method)
+   182026    1.036    0.000   11.115    0.000 C:\Users\kookie\OneDrive\MMA3001_project\.venv\Lib\site-packages\pandas\core\arrays\string_arrow.py:325(astype)
+    21565    0.274    0.000   10.880    0.001 C:\Users\kookie\OneDrive\MMA3001_project\.venv\Lib\site-packages\pandas\core\frame.py:8130(sort_values)
+  1154964    4.950    0.000   10.630    0.000 C:\Users\kookie\OneDrive\MMA3001_project\.venv\Lib\site-packages\pandas\core\arrays\string_arrow.py:134(__init__)
+   402276    5.778    0.000   10.311    0.000 C:\Users\kookie\OneDrive\MMA3001_project\.venv\Lib\site-packages\pandas\core\array_algos\take.py:118(_take_nd_ndarray)
+    15164    0.146    0.000   10.139    0.001 C:\Users\kookie\OneDrive\MMA3001_project\.venv\Lib\site-packages\pandas\core\indexes\base.py:6288(_get_indexer_strict)
+   972746    1.269    0.000    9.984    0.000 C:\Users\kookie\OneDrive\MMA3001_project\.venv\Lib\site-packages\pandas\core\arrays\string_arrow.py:162(_from_pyarrow_array)
+
+
+
+
+PROJECT FUNCTIONS
+======================================================================
+Sat Sep 19 21:11:24 2026    C:\Users\kookie\OneDrive\MMA3001_project\reports\week5_validation_before.prof
+
+         280635697 function calls (276695302 primitive calls) in 233.716 seconds
+
+   Ordered by: cumulative time
+   List reduced from 5583 to 29 due to restriction <'validation.py|reconstruction.py'>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.003    0.003  233.716  233.716 C:\Users\kookie\OneDrive\MMA3001_project\src\validation.py:1(<module>)
+        1    0.063    0.063  226.828  226.828 C:\Users\kookie\OneDrive\MMA3001_project\src\validation.py:702(main)
+        1    0.942    0.942  226.214  226.214 C:\Users\kookie\OneDrive\MMA3001_project\src\validation.py:329(run_experiment)
+     6414    1.628    0.000  193.844    0.030 C:\Users\kookie\OneDrive\MMA3001_project\src\reconstruction.py:485(reconstruct_case)
+     8724    0.443    0.000   46.907    0.005 C:\Users\kookie\OneDrive\MMA3001_project\src\reconstruction.py:145(make_downsampling_mask)
+     6414    0.131    0.000   23.488    0.004 C:\Users\kookie\OneDrive\MMA3001_project\src\reconstruction.py:440(_origin_for_animal)
+        1    0.063    0.063   13.286   13.286 C:\Users\kookie\OneDrive\MMA3001_project\src\reconstruction.py:1026(build_support_audit)
+        1    0.000    0.000    4.124    4.124 C:\Users\kookie\OneDrive\MMA3001_project\src\reconstruction.py:1(<module>)
+     6414    0.140    0.000    4.044    0.001 C:\Users\kookie\OneDrive\MMA3001_project\src\reconstruction.py:245(interpolate_xy)
+       36    0.047    0.001    3.149    0.087 C:\Users\kookie\OneDrive\MMA3001_project\src\validation.py:122(summarise_points)
+       12    0.000    0.000    3.112    0.259 C:\Users\kookie\OneDrive\MMA3001_project\src\validation.py:286(save_predictions)
+    25656    1.466    0.000    1.712    0.000 C:\Users\kookie\OneDrive\MMA3001_project\src\reconstruction.py:390(haversine_m)
+    12828    0.044    0.000    0.921    0.000 C:\Users\kookie\OneDrive\MMA3001_project\src\reconstruction.py:466(_path_length_m)
+    12828    0.274    0.000    0.286    0.000 C:\Users\kookie\OneDrive\MMA3001_project\src\reconstruction.py:351(local_xy_to_latlon)
+        1    0.000    0.000    0.269    0.269 C:\Users\kookie\OneDrive\MMA3001_project\src\reconstruction.py:70(load_reference)
+      174    0.001    0.000    0.240    0.001 C:\Users\kookie\OneDrive\MMA3001_project\src\validation.py:160(<lambda>)
+        3    0.000    0.000    0.206    0.069 C:\Users\kookie\OneDrive\MMA3001_project\src\validation.py:192(summarise_cases)
+      174    0.001    0.000    0.096    0.001 C:\Users\kookie\OneDrive\MMA3001_project\src\validation.py:226(<lambda>)
+      174    0.004    0.000    0.068    0.000 C:\Users\kookie\OneDrive\MMA3001_project\src\validation.py:150(<lambda>)
+      174    0.001    0.000    0.044    0.000 C:\Users\kookie\OneDrive\MMA3001_project\src\validation.py:212(<lambda>)
+        2    0.001    0.000    0.017    0.009 C:\Users\kookie\OneDrive\MMA3001_project\src\validation.py:32(sha256_file)
+        1    0.000    0.000    0.017    0.017 C:\Users\kookie\OneDrive\MMA3001_project\src\validation.py:86(common_supported_cases)
+        1    0.000    0.000    0.014    0.014 C:\Users\kookie\OneDrive\MMA3001_project\src\reconstruction.py:56(load_contract)
+        3    0.000    0.000    0.007    0.002 C:\Users\kookie\OneDrive\MMA3001_project\src\validation.py:259(apply_frozen_criteria)
+       20    0.000    0.000    0.006    0.000 C:\Users\kookie\OneDrive\MMA3001_project\src\validation.py:39(<lambda>)
+     9032    0.005    0.000    0.005    0.000 C:\Users\kookie\OneDrive\MMA3001_project\src\reconstruction.py:133(interval_to_stride)
+        1    0.000    0.000    0.001    0.001 C:\Users\kookie\OneDrive\MMA3001_project\src\reconstruction.py:42(find_project_root)
+        1    0.000    0.000    0.000    0.000 C:\Users\kookie\OneDrive\MMA3001_project\src\validation.py:47(selected_methods_from_contract)
+        1    0.000    0.000    0.000    0.000 C:\Users\kookie\OneDrive\MMA3001_project\.venv\Lib\site-packages\scipy\special\_input_validation.py:1(<module>)
+
+

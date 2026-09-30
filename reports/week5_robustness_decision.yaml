@@ -1,0 +1,14 @@
+decision: D8
+recorded_utc: '2026-09-19T11:05:52.503169+00:00'
+recommendation_scope: conditional_policy
+selected_method: pchip
+selected_interval_minutes: 30
+reason: 'Write at least two sentences explaining what the sensitivity,
+
+  per-animal, offset and failure-case results show about the reliability
+
+  of your PCHIP/30-minute recommendation.'
+evidence_that_would_require_shorter_interval: 'Identify evidence or an engineering
+  use that would require returning
+
+  to a 15-minute interval.'

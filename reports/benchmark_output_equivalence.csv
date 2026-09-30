@@ -1,0 +1,6 @@
+"File","BaselineExists","OptimisedExists","ExactlyIdentical"
+"reports\week4_case_results.csv","True","True","False"
+"reports\week4_decision_table.csv","True","True","False"
+"reports\week4_offset_summary.csv","True","True","False"
+"reports\week4_per_animal_summary.csv","True","True","False"
+"reports\week4_validation_summary.csv","True","True","False"

@@ -1,0 +1,20 @@
+{
+  "platform": "Windows-11-10.0.26200-SP0",
+  "operating_system": "Windows",
+  "operating_system_release": "11",
+  "processor": "AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD",
+  "logical_cpu_count": 12,
+  "physical_cpu_count": 6,
+  "total_memory_gb": 15.93,
+  "python_version": "3.14.7 (tags/v3.14.7:823f032, Aug  5 2026, 10:51:32) [MSC v.1944 64 bit (AMD64)]",
+  "python_executable": "C:\\Users\\kookie\\OneDrive\\MMA3001_project\\.venv\\Scripts\\python.exe",
+  "packages": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2",
+    "seaborn": "0.13.2",
+    "pyyaml": "6.0.3",
+    "pytest": "9.1.1"
+  }
+}

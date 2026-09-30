@@ -1,0 +1,3 @@
+"Implementation","MedianSeconds","MinimumSeconds","MaximumSeconds","RangeSeconds"
+"Baseline","124.422","124.337","126.768","2.431"
+"Optimised","99.029","99.002","99.868","0.866"

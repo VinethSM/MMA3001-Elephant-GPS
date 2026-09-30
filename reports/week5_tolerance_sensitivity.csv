@@ -1,0 +1,21 @@
+PositionTolerance_m,PathTolerance_percent,LongestPassingInterval_selected_method_min,LongestPassingInterval_any_method_min,PassingCandidates
+50.0,5.0,,,none
+50.0,10.0,30.0,30.0,pchip_30min
+50.0,15.0,30.0,30.0,pchip_30min
+50.0,20.0,30.0,30.0,pchip_30min
+75.0,5.0,,,none
+75.0,10.0,30.0,30.0,cubic_30min; linear_30min; pchip_30min
+75.0,15.0,30.0,30.0,cubic_30min; linear_30min; pchip_30min
+75.0,20.0,30.0,30.0,cubic_30min; linear_30min; pchip_30min
+100.0,5.0,,,none
+100.0,10.0,30.0,30.0,cubic_30min; linear_30min; pchip_30min
+100.0,15.0,30.0,60.0,cubic_30min; linear_30min; pchip_30min; cubic_60min
+100.0,20.0,60.0,60.0,cubic_30min; linear_30min; pchip_30min; cubic_60min; linear_60min; pchip_60min
+125.0,5.0,,,none
+125.0,10.0,30.0,30.0,cubic_30min; linear_30min; pchip_30min
+125.0,15.0,30.0,60.0,cubic_30min; linear_30min; pchip_30min; cubic_60min
+125.0,20.0,60.0,60.0,cubic_30min; linear_30min; pchip_30min; cubic_60min; linear_60min; pchip_60min
+150.0,5.0,,,none
+150.0,10.0,30.0,30.0,cubic_30min; linear_30min; pchip_30min
+150.0,15.0,30.0,60.0,cubic_30min; linear_30min; pchip_30min; cubic_60min
+150.0,20.0,60.0,60.0,cubic_30min; linear_30min; pchip_30min; cubic_60min; linear_60min; pchip_60min
