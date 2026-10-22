@@ -10,10 +10,13 @@ overshoot_percent: 0.0
 animals_passing_both: 6
 animals_evaluated: 6
 all_animals_pass: true
-reason: I chose 30 minute intervals as it passed all the tests needed unlike the 60,120
-  and 240 minute intervals which failed the mandatory criteria. The pchip method was
-  chosen as it had the lowest median position error and median absolute path error
-  compared to the other methods.
-evidence_that_would_change_decision: Id make it a smaller interval than 30 if it shwoed
-  that 30 missed important movements but it didnt seem to miss any important movements
-  and the 30 minute interval was the only one that passed all the mandatory criteria.
+reason:   I selected 30-minute sampling because it was the longest tested
+  interval satisfying both accuracy criteria for all six elephants.
+  At this interval, PCHIP had the lowest median position error and
+  zero coordinate overshoot. Cubic had a lower median absolute
+  path-length error, but it produced coordinate overshoot, so PCHIP
+  provided the preferred overall balance.
+evidence_that_would_change_decision:   I would reconsider this choice if new data failed either accuracy
+  criterion or the application required fine-scale or safety-critical
+  movement information. Passing the median criteria does not mean
+  every individual movement is reconstructed accurately.
