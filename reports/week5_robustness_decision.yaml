@@ -3,12 +3,17 @@ recorded_utc: '2026-09-19T11:05:52.503169+00:00'
 recommendation_scope: conditional_policy
 selected_method: pchip
 selected_interval_minutes: 30
-reason: 'Write at least two sentences explaining what the sensitivity,
+reason: >-
+  PCHIP at 30-minute intervals met both project criteria for all six
+  elephants, with a median position error of 39.632 m and a median
+  absolute path-length error of 7.907%. Results were similar for both
+  starting offsets, but some individual segments exceeded the
+  tolerances. The recommendation therefore applies to broad-scale
+  movement monitoring under the chosen project tolerances.
 
-  per-animal, offset and failure-case results show about the reliability
-
-  of your PCHIP/30-minute recommendation.'
-evidence_that_would_require_shorter_interval: 'Identify evidence or an engineering
-  use that would require returning
-
-  to a 15-minute interval.'
+evidence_that_would_require_shorter_interval: >-
+  I would retain the original 15-minute interval or separately
+  validate a shorter interval if fine-scale movements, sharp turns,
+  road crossings or proximity to hazards needed to be identified.
+  I would also reconsider the recommendation if new data failed
+  either project accuracy criterion.

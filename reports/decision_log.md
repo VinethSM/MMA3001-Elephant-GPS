@@ -93,10 +93,10 @@ The local x/y system gives both interpolation coordinates the same physical unit
 
 ### Actual comparison
 
-- Median absolute difference: [INSERT YOUR RESULT] m
-- 95th-percentile absolute difference: [INSERT YOUR RESULT] m
-- Maximum absolute difference: [INSERT YOUR RESULT] m
-- Maximum percentage difference: [INSERT YOUR RESULT]%
+- Median absolute difference: 0.004309 m
+- 95th-percentile absolute difference: 0.119265 m
+- Maximum absolute difference: 2.901643 m
+- Maximum percentage difference: 0.218461%
 
 ### Rejected option
 
